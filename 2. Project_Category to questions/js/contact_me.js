@@ -1,6 +1,8 @@
 $(function() {
+
     var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
     var kbid = "78fd356d-d4a0-4fcb-a8cf-b630e1e0c5a3"
+
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
@@ -55,6 +57,7 @@ $(function() {
                     "Connection": "keep-alive"
                 },
                 "processData": false,
+
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
@@ -68,7 +71,9 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
+
                 }/*,
+
                 error: function() {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
@@ -78,7 +83,9 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
+
                 }*/,
+
             });
         },
         filter: function() {
