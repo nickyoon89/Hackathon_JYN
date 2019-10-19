@@ -1,0 +1,1128 @@
+{
+	"info": {
+		"_postman_id": "c20ba416-56c8-4372-a4e8-a9316a3e98c3",
+		"name": "Knowledge and QnA (Applied Research)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "GenerateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2c96f1cc-faa5-4405-9100-794b2793ed7b",
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizationid",
+								"type": "text",
+								"value": "{{orgId}}"
+							},
+							{
+								"key": "secretkey",
+								"type": "text",
+								"value": "{{secretKey}}"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/generatetoken",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"generatetoken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SecretKey-Generation Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/getsecretkey",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"getsecretkey"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "knowledgebases",
+			"item": [
+				{
+					"name": "create knowledgebase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "144b75e3-be75-4e73-87a0-7f681cbf0e70",
+								"exec": [
+									"pm.environment.set(\"kbId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Knowledge Base for a Bank\",\n\t\"description\" : \"Checking account and online banking\",\n\t\"coreLanguage\" : \"{{languageCode}}\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get knowledgebase",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get knowledgebases",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ea9939-fdbd-4813-b27e-767be74f4e7d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases?limit=5",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update knowledgebase",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Knowledge Base for a bank updated\",\n\t\"description\" : \"updated description\",\n\t\"coreLanguage\": \"{{languageCode}}\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete knowledgebase",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}"
+							]
+						},
+						"description": "Deletes a KB"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "create category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cd05a2b6-8c10-40b9-a8fe-42abb166556b",
+								"exec": [
+									"pm.environment.set(\"categoryId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Category 1\",\n\t\"description\" : \"First category\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/categories/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ea9939-fdbd-4813-b27e-767be74f4e7d",
+								"exec": [
+									"pm.environment.set(\"test\", \"stas\");",
+									"",
+									"pm.environment.get(\"test\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/categories/{{categoryId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"categories",
+								"{{categoryId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ea9939-fdbd-4813-b27e-767be74f4e7d",
+								"exec": [
+									"pm.environment.set(\"test\", \"stas\");",
+									"",
+									"pm.environment.get(\"test\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/categories/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Category 1\",\n\t\"description\" : \"The category 1 update!\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/categories/{{categoryId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"categories",
+								"{{categoryId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3ea9939-fdbd-4813-b27e-767be74f4e7d",
+								"exec": [
+									"pm.environment.set(\"test\", \"stas\");",
+									"",
+									"pm.environment.get(\"test\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/categories/{{categoryId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"categories",
+								"{{categoryId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "documents",
+			"item": [
+				{
+					"name": "create document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d46360b1-d4f2-4b5f-9d3c-cd370cb744a9",
+								"exec": [
+									"pm.environment.set(\"documentId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"faq\",\r\n  \"faq\": {\r\n    \"question\": \"What is the Dress Code Policy?\",\r\n    \"answer\": \"Usually, you dress in a suit on the weekdays and then fridays are casual\",\r\n    \"alternatives\": [\"what are all the dress codes?\"]\r\n  },\r\n  \"categories\": [\r\n    {\r\n      \"id\": \"{{categoryId}}\"\r\n    }\r\n  ],\r\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get document",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents/{{documentId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents",
+								"{{documentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get documents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get documents next page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "organizationid",
+								"type": "text",
+								"value": "{{orgId}}"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents?limit=5&after=",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "after",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get documents previous page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "organizationid",
+								"type": "text",
+								"value": "{{orgId}}"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents?limit=5&before=",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "before",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update document",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"faq\",\r\n  \"faq\": {\r\n    \"question\": \"What is the dress policy?\",\r\n    \"answer\": \"There is none.  Updated\",\r\n    \"alternatives\": [\"what are all the policies?\"]\r\n  },\r\n  \"categories\": [\r\n    {\r\n      \"id\": \"{{categoryId}}\"\r\n    }\r\n  ],\r\n  \"externalUrl\": \"http://test.com/info/{{giud}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents/{{documentId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents",
+								"{{documentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulk upload documents",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n[\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Why should I open a checking account?\",\n    \"answer\": \"A checking account is a convenient way to protect and access your money. For example, you can have your paycheck automatically deposited into your checking account and pay your bills directly from there. A checking account can also help you keep track of your spending either by entering transactions in an account register yourself, or through your Online Banking account. Here, you can view digital images of each check, after they clear and keep track of your available balance 24/7.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"How secure is my financial information?\",\n    \"answer\": \"KeyBank uses state-of-the-art technology to ensure your information is kept safe. We deliver a secure environment through a variety of methods, such as encryption, firewalls and customer-controlled passwords.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"What do I do if my debit card is lost or stolen?\",\n    \"answer\": \"Report the incident or theft as soon as possible, by contacting KeyBank at 1-800-KEY2YOU® (1-800-539-2968) and following the voice prompts. We also recommend you check your account online for potential fraudulent transactions. \"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"How do I sign up for email and text alerts?\",\n    \"answer\": \"You need to have an Online Banking account to receive email and text alerts about your accounts. Once you’ve signed on to your Online Banking account, follow the prompts to set up Email and Text Alerts.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Can I make multiple payments at once?\",\n    \"answer\": \"Yes. Below your payee list, click on, 'Want to make more payments at a time?' When you select this option, it will become your default view. \"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Why should I open a savings account?\",\n    \"answer\": \"A KeyBank savings account is a convenient way to keep your funds completely accessible while still earning interest. Manage your funds, monitor your cash flow and see your balances grow over time. Track your transactions however you wish, including through online banking, where you can see your balance 24/7.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"What does my credit score have to do with my loan?\",\n    \"answer\": \"Your credit score tells a story of your ability to manage your finances and make your payments. It can affect whether or not you’re approved for a loan as well as the length of the loan and the interest rate you qualify for.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"How much will I have to pay in interest over the life of a loan?\",\n    \"answer\": \"This depends on the amount of money you borrow, the interest rate and the term. You can estimate the amount using the Loan Estimation Calculator.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Why did I get locked out of Online Banking?\",\n    \"answer\": \"For your security, we may lock access for any of the following: 1. Failed password check; 2. Failed to answer security questions correctly; 3. Failed computer authentication; 4. Unable to authenticate yourself\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Is there a limit on using mobile check deposit?\",\n    \"answer\": \"There is a limit on how much you can deposit using mobile check deposit in 30 days. For most checking and savings account, that limit is $5,000, and for our relationship checking and savings accounts, it’s $10,000. If you deposit your maximum at one time, you’ll have to wait until the 30 days is up to use mobile check deposit again. You’ll notice a reminder of how much you can deposit when you select the deposit option in the mobile app.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Can I use Online Banking to setup alerts to notify me about account activity?\",\n    \"answer\": \"Yes, you may select to receive specific email and mobile alerts for accounts from your Account Summary page in Online Banking.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n},\n{\n  \"type\": \"faq\",\n  \"faq\": {\n    \"question\": \"Can I win a lottery?\",\n    \"answer\": \"Yes, you can definitely win a lottery if you play weekly and buy lottery tickets.  This will allow you to travel the world and go on vacation.\"\n  },\n  \"externalUrl\": \"http://test.co/info/{{$guid}}\"\n}\n]"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete document",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/documents/{{kbId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"documents",
+								"{{kbId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "search and train",
+			"item": [
+				{
+					"name": "train knowledgebase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f1f717b-6bae-4392-a9eb-b7a159b3a831",
+								"exec": [
+									"",
+									"pm.environment.set(\"trainingid\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "organizationid",
+								"type": "text",
+								"value": "{{orgId}}"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/trainings",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"trainings"
+							]
+						},
+						"description": "training for knowledgebase documents"
+					},
+					"response": []
+				},
+				{
+					"name": "get training",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/trainings/{{trainingid}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"trainings",
+								"{{trainingid}}"
+							]
+						},
+						"description": "get a single training for the kb"
+					},
+					"response": []
+				},
+				{
+					"name": "get trainings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/languages/{{languageCode}}/trainings?limit=2",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"languages",
+								"{{languageCode}}",
+								"trainings"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						},
+						"description": "get all trainings for the knowledgebases"
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "organizationid",
+								"value": "{{orgId}}",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"query\": \"Why did my account get locked?\",\r\n  \"query2\": \"I want to get alerts for my account activity. What do I do?\",\r\n  \"query3\": \"Will my loan application be dependent on my credit score?\",\r\n  \"query4\": \"Is my financial information safe?\",\r\n  \"query5\": \"Is my data  safe?\",\r\n  \"query6\": \"What do you do for my security?\",\r\n  \"query7\": \"Can I take a vacation?\",\r\n  \r\n  \"pageSize\": 5,\r\n  \"pageNumber\": 1,\r\n  \"sortOrder\": \"string\",\r\n  \"sortBy\": \"string\",\r\n  \"languageCode\":\"{{languageCode}}\",\r\n  \"documentType\": \"Faq\"\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/knowledgebases/{{kbId}}/search",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"knowledgebases",
+								"{{kbId}}",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Api endpoints for training and searching trained information",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b0a043de-5c6f-4f08-83ca-96cab2965675",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "42102824-7f6d-4bf9-a33c-1e353725d3f7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,2523 @@
+
+swagger: '2.0'
+schemes: [https]
+host: api.genesysappliedresearch.com
+basePath: /v2/knowledge
+parameters:
+  organization:
+    in: header
+    name: organizationid
+    type: string
+    required: true
+  token:
+    in: header
+    name: token
+    type: string
+    required: true
+paths:
+  '/knowledgebases':
+    parameters:
+     - $ref: '#/parameters/token'
+     - $ref: '#/parameters/organization'
+    post:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBase'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: post_knowledge_bases_api
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/KnowledgeBasePostInput'
+      tags:
+        - KnowledgeBase APIs
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBasesListing'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: get_knowledge_bases_api
+      tags:
+        - KnowledgeBase APIs
+  '/knowledgebases/{knowledgeBaseId}':
+    parameters:
+    - $ref: '#/parameters/token'
+    - $ref: '#/parameters/organization'
+    - name: knowledgeBaseId
+      in: path
+      required: true
+      type: string
+      description: The Knowledge Base ID.
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBase'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: get_knowledge_base_api
+      tags:
+        - KnowledgeBase APIs
+    put:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBase'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: patch_knowledge_bases_api
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/KnowledgeBasePostInput'
+      tags:
+        - KnowledgeBase APIs
+    delete:
+      description: Deletes a single KnowledgeBase based on ID supplied
+      operationId: delete_knowledge_base_api
+      tags:
+        - KnowledgeBase APIs
+      responses:
+        204:
+          description: KnowledgeBase deleted
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: "knowledgeBaseId"
+        in: "path"
+        description: "Knowledge base ID"
+        required: true
+        type: "string"
+      - name: "languageCode"
+        in: "path"
+        description: "Language and locale for the category. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        required: true
+        type: "string"
+    get:
+      parameters:
+        - name: "before"
+          in: "query"
+          description: "The cursor that points to the start of the set of entities that has been returned."
+          type: string
+        - name: "after"
+          in: "query"
+          description: "The cursor that points to the end of the set of entities that has been returned."
+          type: string
+        - name: "limit"
+          in: "query"
+          description: "Number of entities to return. Maximum of 200."
+          type: string
+      tags:
+        - KnowledgeBase APIs
+      summary: "Get categories"
+      description: ""
+      operationId: "getKnowledgeKnowledgebaseLanguageCategories"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CategoryListing"
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+    post:
+      tags:
+        - KnowledgeBase APIs
+      summary: "Create new category"
+      description: ""
+      operationId: "postKnowledgeKnowledgebaseLanguageCategories"
+      produces:
+      - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/KnowledgeCategory"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/KnowledgeCategory"
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: "knowledgeBaseId"
+        in: "path"
+        description: "Knowledge base ID"
+        required: true
+        type: "string"
+      - name: "languageCode"
+        in: "path"
+        description: "Language and locale for the category. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        required: true
+        type: "string"
+      - name: "categoryId"
+        in: "path"
+        description: "Category ID"
+        required: true
+        type: "string"
+    get:
+      tags:
+        - KnowledgeBase APIs
+      summary: "Get category"
+      description: ""
+      operationId: "getKnowledgeKnowledgebaseLanguageCategory"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/KnowledgeCategory"
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+    put:
+      tags:
+        - KnowledgeBase APIs
+      summary: "Update category"
+      description: ""
+      operationId: "patchKnowledgeKnowledgebaseLanguageCategories"
+      produces:
+      - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/KnowledgeCategory"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/KnowledgeCategory"
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+    delete:
+      description: Deletes a single Category based on ID supplied
+      operationId: delete_category_api
+      tags:
+        - KnowledgeBase APIs
+      responses:
+        204:
+          description: Category deleted
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        name: languageCode
+        in: path
+        required: true
+        type: string
+      - description: The KnowledgeBase ID of the organization
+        name: knowledgeBaseId
+        in: path
+        required: true
+        type: string
+    post:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBasedocuments'
+        400:
+            description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+              invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+              invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+          \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+            \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+            \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+            \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+          \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+            \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+          \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+            \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+          \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+            \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+          \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: post_knowledge_base_documents_api
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/KnowledgeBaseDocumentInput'
+      tags:
+        - KnowledgeBase APIs
+    patch:
+      summary: "Update documents collection"
+      description: "Used to make a bulk upload of documents"
+      produces:
+        - "application/json"
+      responses:
+          200:
+            description: Success
+            schema:
+              $ref: '#/definitions/KnowledgebasedocumentsPatchResult'
+          400:
+            description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+              invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+              invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+          401:
+            description: "No authentication bearer token specified in authorization\
+            \ header."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+              bad.credentials: "Invalid login credentials."
+          403:
+            description: "You are not authorized to perform the requested action."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+              not.authorized: "You are not authorized to perform the requested action."
+              missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+          404:
+            description: "The requested resource was not found."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              not.found: "The requested resource was not found."
+          415:
+            description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+          429:
+            description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+          500:
+            description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+          503:
+            description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+          504:
+            description: "The request timed out."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              authentication.request.timeout: "Authentication request timeout."
+              request.timeout: "The request timed out."
+      operationId: patch_knowledge_base_documents_api
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            type: "array"
+            items:
+              $ref: '#/definitions/KnowledgeBaseDocumentInput'
+      tags:
+          - KnowledgeBase APIs
+    get:
+      parameters:
+        - name: "before"
+          in: "query"
+          description: "The cursor that points to the start of the set of entities that has been returned."
+          type: string
+        - name: "after"
+          in: "query"
+          description: "The cursor that points to the end of the set of entities that has been returned."
+          type: string
+        - name: "limit"
+          in: "query"
+          description: "Number of entities to return. Maximum of 200."
+          type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgebasedocumentsResult'
+        400:
+            description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+              invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+              invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+          \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+            \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+            \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+            \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+          \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+            \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+          \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+            \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+          \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+            \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+          \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: get_knowledge_base_documents_api
+      tags:
+        - KnowledgeBase APIs
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: knowledgeBaseId
+        in: path
+        required: true
+        type: string
+      - name: languageCode
+        description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        in: path
+        required: true
+        type: string
+      - name: documentId
+        in: path
+        required: true
+        type: string
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/KnowledgeBasedocuments'
+        400:
+            description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+              invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+              invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+          \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+            \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+            \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+            \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+          \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+            \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+          \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+            \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+          \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+            \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+          \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+      operationId: get_knowledge_base_document_api
+      tags:
+        - KnowledgeBase APIs
+    put:
+      summary: "Update document"
+      description: "Used to update document"
+      produces:
+        - "application/json"
+      responses:
+          200:
+            description: Success
+            schema:
+              $ref: '#/definitions/KnowledgeBasedocuments'
+          400:
+            description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+              invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+              invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+          401:
+            description: "No authentication bearer token specified in authorization\
+            \ header."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+              bad.credentials: "Invalid login credentials."
+          403:
+            description: "You are not authorized to perform the requested action."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+              not.authorized: "You are not authorized to perform the requested action."
+              missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+          404:
+            description: "The requested resource was not found."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              not.found: "The requested resource was not found."
+          415:
+            description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+          429:
+            description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+          500:
+            description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+          503:
+            description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+          504:
+            description: "The request timed out."
+            schema:
+              $ref: "#/definitions/ErrorBody"
+            x-inin-error-codes:
+              authentication.request.timeout: "Authentication request timeout."
+              request.timeout: "The request timed out."
+      operationId: patch_knowledge_base_document_api
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/KnowledgeBaseDocumentInput'
+      tags:
+          - KnowledgeBase APIs
+    delete:
+      description: Deletes a single document based on ID supplied
+      operationId: delete_document_api
+      tags:
+        - KnowledgeBase APIs
+      responses:
+        204:
+          description: Document deleted
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/search':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: "knowledgeBaseId"
+        in: "path"
+        description: "Knowledge base ID"
+        required: true
+        type: string
+    post:
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/SearchKnowledgeBaseInput'
+      tags:
+        - KnowledgeBase APIs   
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/SearchKnowledgeBaseResult'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: "knowledgeBaseId"
+        in: "path"
+        description: "Knowledge base ID"
+        required: true
+        type: string
+      - name: "languageCode"
+        in: "path"
+        description: "Language and locale for the model to be trained. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        required: true
+        type: string
+    get:
+      parameters:
+        - name: "before"
+          in: "query"
+          description: "The cursor that points to the start of the set of entities that has been returned."
+          type: string
+        - name: "after"
+          in: "query"
+          description: "The cursor that points to the end of the set of entities that has been returned."
+          type: string
+        - name: "limit"
+          in: "query"
+          description: "Number of entities to return. Maximum of 200."
+          type: string
+      tags:
+        - KnowledgeBase APIs 
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/TrainingListing'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+    post:
+      tags:
+        - KnowledgeBase APIs
+      responses:
+        202:
+          description: Success
+          schema:
+            $ref: '#/definitions/TrainingTriggerOutput'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+  '/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}':
+    parameters:
+      - $ref: '#/parameters/token'
+      - $ref: '#/parameters/organization'
+      - name: "knowledgeBaseId"
+        in: "path"
+        description: "Knowledge base ID"
+        required: true
+        type: string
+      - name: "languageCode"
+        in: "path"
+        description: "Language and locale for the model to be trained. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        required: true
+        type: string
+      - name: "trainingId"
+        in: "path"
+        description: "Training Id"
+        required: true
+        type: string
+    get:
+      tags:
+        - KnowledgeBase APIs 
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/TrainingOutput'
+        400:
+          description: "The request could not be understood by the server due to malformed\
+            \ syntax."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            bad.request: "The request could not be understood by the server due to\
+              \ malformed syntax."
+            invalid.date: "Dates must be specified as ISO-8601 strings. For example:\
+              \ yyyy-MM-ddTHH:mm:ss.SSSZ"
+            invalid.value: "Value [%s] is not valid for field type [%s]. Allowable\
+              \ values are: %s"
+        401:
+          description: "No authentication bearer token specified in authorization\
+            \ header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.required: "No authentication bearer token specified in\
+              \ authorization header."
+            bad.credentials: "Invalid login credentials."
+        403:
+          description: "You are not authorized to perform the requested action."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            missing.permissions: "Unable to perform the requested action. You are\
+              \ missing the following permission(s): %s"
+            not.authorized: "You are not authorized to perform the requested action."
+            missing.any.permissions: "Unable to perform the requested action. You\
+              \ must have at least one of the following permissions assigned: %s"
+        404:
+          description: "The requested resource was not found."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            not.found: "The requested resource was not found."
+        415:
+          description: "Unsupported Media Type - Unsupported or incorrect media type,\
+            \ such as an incorrect Content-Type value in the header."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            unsupported.media.type: "Unsupported Media Type - Unsupported or incorrect\
+              \ media type, such as an incorrect Content-Type value in the header."
+        429:
+          description: "Rate limit exceeded the maximum [%s] requests within [%s]\
+            \ seconds"
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            too.many.requests: "Rate limit exceeded the maximum [%s] requests within\
+              \ [%s] seconds"
+        500:
+          description: "The server encountered an unexpected condition which prevented\
+            \ it from fulfilling the request."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            internal.server.error: "The server encountered an unexpected condition\
+              \ which prevented it from fulfilling the request."
+        503:
+          description: "Service Unavailable - The server is currently unavailable\
+            \ (because it is overloaded or down for maintenance)."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            service.unavailable: "Service Unavailable - The server is currently unavailable\
+              \ (because it is overloaded or down for maintenance)."
+        504:
+          description: "The request timed out."
+          schema:
+            $ref: "#/definitions/ErrorBody"
+          x-inin-error-codes:
+            authentication.request.timeout: "Authentication request timeout."
+            request.timeout: "The request timed out."
+         
+         
+info:
+  title: ' Knowledge Service API'
+  version: '2.0'
+  description: Knowledge Service for Knowledge Search. All knowledge creation is done via KMS (Knowledge Management Service), and all search is perform via Question and Answer Service (QnA)
+produces:
+  - application/json
+consumes:
+  - application/json
+tags:
+  - name: KnowledgeBase APIs
+    description: 'The apis to create knowledgeBase, Upload documents and train it.'
+definitions:
+  KnowledgeBaseDocumentInput:
+    required:
+      - "type"
+      - "faq"
+      - "categories"
+    properties:
+      
+      type:
+        type: string
+        description: >-
+          Document type, can be either Faq or Article
+        example: 'faq'
+      faq:
+        $ref: '#/definitions/KnowledgeBaseDocumentFaq'
+      categories:
+          type: array
+          items:
+            $ref: '#/definitions/KnowledgeBaseDocumentCategory'
+      languageCode:
+        type: string
+        description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+      externalUrl:
+        type: string
+        description: 'External URL for this resource defined somewhere else'
+    type: object
+  KnowledgeBaseDocumentOutput:
+    properties:
+      type:
+        type: string
+        description: >-
+          Document type, can be either faq or article but only faq allowed for now
+        example: 'faq'
+      faq:
+        $ref: '#/definitions/KnowledgeBaseDocumentFaq'
+      article:
+        type: string
+        example: null
+      languageCode:
+        type: string
+        description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+      categories:
+          type: array
+          items:
+            $ref: '#/definitions/KnowledgeCategoryDocument'
+      knowledgebase: 
+        $ref: '#/definitions/KnowledgeBase'
+      dateCreated:
+        type: "string"
+        format: "date-time"
+        description: "Category creation date-time. Date time is represented as an\
+          \ ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateModified:
+        type: "string"
+        format: "date-time"
+        description: "Category last modification date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      externalUrl:
+        type: string
+        description: 'External URL for this resource defined somewhere else'
+    type: object
+  KnowledgeBaseDocumentFaq:
+    required:
+      - question
+      - answer
+    properties:
+      question:
+        type: string
+        description: >-
+          The question for this FAQ
+        example: "What is the current personal loan rate?"
+      answer:
+        type: string
+        description: "The answer for this FAQ"
+        example: "Below 5% on average"
+      alternatives:
+        type: array
+        description: "Alternative questions"
+        example: ['Where can I get information about rate for personal loans?']
+        uniqueItems: true
+        items:
+          type: string
+    type: object
+  KnowledgeBaseDocumentCategory:
+    required:
+      - id
+    properties:
+      id:
+        type: string
+        description: KnowledgeBase Category ID
+        example: dd19151b-a108-47a0-85ca-908167d40712
+    type: object
+  KnowledgebasedocumentsPatchResult:
+    allOf:
+      - type: "object"
+        properties:
+          entities:
+            type: array
+            description: List of all documents for knowledgeBase
+            items:
+              $ref: '#/definitions/KnowledgeBasedocuments'
+  KnowledgebasedocumentsResult:
+    allOf:
+      - type: "object"
+        properties:
+          entities:
+            type: array
+            description: List of all documents for knowledgeBase
+            items:
+              $ref: '#/definitions/KnowledgeBasedocuments'
+          count:
+            type: "integer"
+            description: "Number of entities retrieved"
+      - $ref: '#/definitions/CursorParams'
+  KnowledgeBasedocuments:
+    allOf:
+      - $ref: '#/definitions/KnowledgeBaseDocument'
+      - required:
+          - selfUri
+        properties:
+          selfUri:
+            type: string
+            description: Self URI for the resource
+            example: >-
+              /org/orgId/knowledgebase/knowledgeBaseId/locales/locale_id/Document/Document_id
+        type: object
+  KnowledgeBaseDocument:
+    allOf:
+      - $ref: '#/definitions/KnowledgeBaseDocumentOutput'
+      - required:
+          - id
+        properties:
+          id:
+            type: string
+            description: KnowledgeBase Document ID
+            example: 9dcdd59c-fbaf-4443-8e9c-499d177ee266
+        type: object
+  ErrorBody:
+    required:
+      - code
+      - status
+    properties:
+      status:
+        type: integer
+      code:
+        type: string
+      entityId:
+        type: string
+      entityName:
+        type: string
+      message:
+        type: string
+      messageWithParams:
+        type: string
+      messageParams:
+        type: string
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/Detail'
+    type: object
+  Detail:
+    properties:
+      errorCode:
+        type: string
+      fieldName:
+        type: string
+      entityId:
+        type: string
+      entityName:
+        type: string
+    type: object
+  KnowledgeBasePostInput:
+    required:
+      - coreLanguage
+      - name
+    properties:
+      name:
+        type: string
+        description: Knowledge base name
+        example: Retail Banking
+      description:
+        type: string
+        description: KnowledgeBase description
+        example: This knowledge base contain information about retail banking
+      coreLanguage:
+        type: string
+        description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+      dateCreated:
+        type: "string"
+        format: "date-time"
+        description: "Knowledge base creation date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateModified:
+        type: "string"
+        format: "date-time"
+        description: "Knowledge base last modification date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+    type: object
+  KnowledgeBase:
+    allOf:
+      - $ref: '#/definitions/KnowledgeBasePostInput'
+      - required:
+          - id
+        properties:
+          id:
+            type: string
+            description: Knowledge Base ID
+            example: 9dcdd59c-fbaf-4443-8e9c-499d177ee266
+          selfUri:
+            type: string
+        type: object
+  KnowledgeBasesListing:
+    allOf:
+      - type: "object"
+        properties:
+          entities:
+            type: array
+            description: List of all knowledge bases
+            items:
+              "$ref": "#/definitions/KnowledgeBase"
+          count:
+            type: "integer"
+            description: "Number of entities retrieved"
+      - $ref: '#/definitions/CursorParams'
+  KnowledgeCategory:
+    type: "object"
+    required:
+      - "name"
+    properties:
+      id:
+        type: "string"
+        description: "The globally unique identifier for the object."
+        readOnly: true
+      name:
+        type: "string"
+        description: "Category name"
+      description:
+        type: "string"
+        description: "Category description"
+      languageCode:
+        description: "Language and locale for the category. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+        readOnly: true
+      dateCreated:
+        type: "string"
+        format: "date-time"
+        description: "Category creation date-time. Date time is represented as an\
+          \ ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateModified:
+        type: "string"
+        format: "date-time"
+        description: "Category last modification date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      knowledgeBase:
+        readOnly: true
+        allOf:
+          - $ref: "#/definitions/KnowledgeBase"
+      selfUri:
+        type: "string"
+        format: "uri"
+        description: "The URI for this object"
+        readOnly: true
+  KnowledgeCategoryDocument:
+    type: "object"
+    required:
+      - "name"
+    properties:
+      id:
+        type: "string"
+        description: "The globally unique identifier for the object."
+        readOnly: true
+      name:
+        type: "string"
+        description: "Category name"
+      description:
+        type: "string"
+        description: "Category description"
+      languageCode:
+        type: "string"
+        description: "Language and locale for category. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+        readOnly: true
+      dateCreated:
+        type: "string"
+        format: "date-time"
+        description: "Category creation date-time. Date time is represented as an\
+          \ ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateModified:
+        type: "string"
+        format: "date-time"
+        description: "Category last modification date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      selfUri:
+        type: "string"
+        format: "uri"
+        description: "The URI for this object"
+        readOnly: true
+  CategoryListing:
+    allOf:
+      - type: "object"
+        properties:
+          entities:
+            type: "array"
+            items:
+              $ref: "#/definitions/KnowledgeCategory"
+          count:
+            type: "integer"
+            description: "Number of entities retrieved"
+      - $ref: '#/definitions/CursorParams'
+  CursorParams:
+    type: "object"
+    properties:
+      count:
+        type: number
+        description: Total number of records returned
+      nextUri:
+        type: string
+        description: URI for the next resource
+      previousUri:
+        type: string
+        description: URI for the previous resource
+  SearchKnowledgeBaseInput:
+    required:
+      - "query"
+      - "pageSize"
+      - "pageNumber"
+      - "documentType"
+      - "languageCode"
+    properties:
+      query:
+        type: string
+        description: >-
+          Input query to search content in the knowledge base
+        example: "Test Query"
+      pageSize:
+        type: integer
+        format: int32
+        example: 25
+        description: >-
+          Page size of the returned results
+      pageNumber:
+        type: integer
+        format: int32
+        example: 1
+        description: >-
+          Page number of the returned results
+      documentType:
+        type: string
+        description: >-
+          Document type, can be either Faq or Article
+        example: 'Faq'
+      languageCode:
+        type: string
+        description: "Language and locale for searching documents. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+      isTest:
+        type: boolean
+        description: >-
+          If true then query is being executed in test mode on the Knowledge Base Documents
+        example: true
+    type: object
+  SearchKnowledgeBaseDocument:
+    properties:
+      type:
+        type: string
+        description: >-
+          Document type, can be either faq or article but only faq allowed for now
+        example: 'Faq'
+      faq:
+        $ref: '#/definitions/KnowledgeBaseDocumentFaq'
+      categories:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+      knowledgebase:
+        type: object
+        properties:
+          id:
+            type: string
+            example: kb1
+          selfUri:
+            type: string
+            description: Self URI for the resource
+            example: /v2/knowledge/knowledgebases/kb1
+      externalUrl:
+        type: string
+        description: 'External URL for this resource defined somewhere else'
+              
+      confidence:
+        type: number
+        example: 0.25
+      id:
+        type: string
+        description: Id of the document
+      languageCode:
+          type: string
+          description: "Language and locale for document content. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+          example: "en-US"
+      selfUri:
+        type: string
+        description: Self URI for the resource
+        example: >-
+          /org/orgId/knowledgebase/knowledgeBaseId/locales/locale_id/Document/Document_id
+    type: object
+  SearchKnowledgeBaseResult:
+    properties:
+      pageCount:
+        type: integer
+        format: int32
+        example: 1      
+      pageNumber:
+        type: integer
+        format: int32
+        example: 1
+      pageSize:
+        type: integer
+        format: int32
+        example: 25
+      query: 
+        type: string
+        description: Searched Query
+        example: "personal loan"
+      results:
+        type: array
+        items:
+          "$ref": '#/definitions/SearchKnowledgeBaseDocument'
+      total:
+        type: integer
+        format: int64
+        example: 1
+
+      searchId:
+        type: string
+        description: Search Query ID
+        example: "1"
+
+    type: object
+  TrainingTriggerOutput:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: "The globally unique identifier for the object."
+        readOnly: true
+      dateTriggered:
+        type: "string"
+        format: "date-time"
+        description: "Training Triggering date-time. Date time is represented as an\
+          \ ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateCompleted:
+        type: "string"
+        example: "null"
+        description: "Training Completed date-time.In this case it will be null, as this is training trigger endpoint and we cannot have completion time now."
+        readOnly: true
+      languageCode:
+        type: "string"
+        description: "Language and locale for which the model will be trained for. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        readOnly: true
+        example: "en-US"
+      errorMessage:
+        type: "string"
+        description: "Error Message in case of 'Failed' status, else it should be empty"
+        readOnly: true
+        example: ""
+      knowledgebase:
+        type: object
+        properties:
+          id:
+            type: string
+            example: kb1
+          selfUri:
+            type: "string"
+            format: "uri"
+            description: "The URI for this object"
+            readOnly: true
+      status:
+        type: "string"
+        description: "Status of the Training"
+        readOnly: true
+        example: Queued
+      selfUri:
+        type: "string"
+        format: "uri"
+        description: "The URI for this object"
+        readOnly: true
+  TrainingOutput:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: "The globally unique identifier for the object."
+        readOnly: true
+      dateTriggered:
+        type: "string"
+        format: "date-time"
+        description: "Training Triggering date-time. Date time is represented as an\
+          \ ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      dateCompleted:
+        type: "string"
+        format: "date-time"
+        description: "Training completion date-time. Date time is represented\
+          \ as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ"
+        readOnly: true
+      errorMessage:
+        type: "string"
+        description: "Error Message in case of 'Failed' status, else it should be empty"
+        readOnly: true
+        example: ""
+      languageCode:
+        type: "string"
+        description: "Language and locale for which the model was trained for. Should adhere to ISO 639-1 to some extent. Accepted format is {language}-{LOCALE} where language has 2 characters max lenght and LOCALE has 2 characters max length in capital letters. For instance, en-US is valid, but EN-us or en-USA is not"
+        example: "en-US"
+        readOnly: true      
+      knowledgebase:
+        type: object
+        properties:
+          id:
+            type: string
+            example: kb1
+          selfUri:
+            type: "string"
+            format: "uri"
+            description: "The URI for this object"
+            readOnly: true
+      status:
+        type: "string"
+        description: "Status of the Training"
+        readOnly: true
+        example: Queued
+      selfUri:
+        type: "string"
+        format: "uri"
+        description: "The URI for this object"
+        readOnly: true
+  TrainingListing:
+    allOf:
+      - type: "object"
+        properties:
+          entities:
+            type: array
+            description: List of all Trainings for knowledgeBase
+            items:
+              $ref: '#/definitions/TrainingOutput'
+      - $ref: '#/definitions/CursorParams'
+responses:
+  ParseError:
+    description: When a mask can't be parsed
+  MaskError:
+    description: When any error occurs on mask
