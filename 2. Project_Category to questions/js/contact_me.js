@@ -70,7 +70,7 @@ function sendEmail(){
 function sendToQna(filteredQuestion, firstName, email, phone) {
     var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
     var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554"
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU2MjgzNSwiaWF0IjoxNTcxNTU5MjM1fQ.z6l-5_Wv7oAGozF5ev26jsXlV1yArx7oqh-a3jRF8ck"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU2Njk4MiwiaWF0IjoxNTcxNTYzMzgyfQ.PLSq28CZ7wH4tM8l_o1aVtBbRCyHnpqYbnvxQQtQ-rc"
     $.ajax({
         data:JSON.stringify( {
             "query": filteredQuestion,
@@ -110,9 +110,12 @@ function sendToQna(filteredQuestion, firstName, email, phone) {
             })
             
             $.getJSON("../json/graphData.json").done(function(graphData){
-                graphData[data.results[0].faq.answer]=graphData[data.results[0].faq.answer]+1;
+                console.log(graphData);
+                graphData[data.results[0].faq.answer]=parseInt(graphData[data.results[0].faq.answer])+1;
                 if(filteredQuestion.includes("**")){
-                    graphData[data.results[0].faq.answer+"_off"]=graphData[data.results[0].faq.answer+"_off"]+1;
+                    console.log(graphData[data.results[0].faq.answer+"_off"]);
+                    graphData[data.results[0].faq.answer+"_off"]=parseInt(graphData[data.results[0].faq.answer+"_off"])+1;
+                    console.log(graphData[data.results[0].faq.answer+"_off"]);
                 }
                 console.log(graphData);
             })
