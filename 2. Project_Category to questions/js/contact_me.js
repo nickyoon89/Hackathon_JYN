@@ -109,6 +109,14 @@ function sendToQna(filteredQuestion, firstName, email, phone) {
                 $('#link3').html('<a href="'+siteUrl[categoryArr[2]]+'" target = "_blank">'+categoryArr[2]+'</a>');  
             })
             
+            $.getJSON("../json/graphData.json").done(function(graphData){
+                graphData[data.results[0].faq.answer]=graphData[data.results[0].faq.answer]+1;
+                if(filteredQuestion.includes("**")){
+                    graphData[data.results[0].faq.answer+"_off"]=graphData[data.results[0].faq.answer+"_off"]+1;
+                }
+                console.log(graphData);
+            })
+
             $("#btnSubmit").attr("disabled", false);
             $('#success').html("<div class='alert alert-success'>");
             $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
