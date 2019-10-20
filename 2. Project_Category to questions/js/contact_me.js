@@ -1,3 +1,27 @@
+var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge";
+var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554";
+var organizationid = "a37586f7-04db-4494-b765-2d7f4c41dbce";
+var secretkey = "746fb6e6-d058-4d0b-b8e4-0a9c74665d82";
+var token = "";
+//var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU3NDIxNywiaWF0IjoxNTcxNTcwNjE3fQ.F-pTz3yKlG3ONSFn6RPnaNtkhAL4n7PnSIRMk6mOhwQ"
+function initFunction(){
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": endpoint+"/generatetoken",
+        "method": "POST",
+        "headers": {
+          "organizationid": organizationid,
+          "secretkey": secretkey,
+          "Accept": "*/*",
+        }
+      }
+      
+      $.ajax(settings).done(function (response) {
+        token = response.token;
+        console.log("Token Generated");
+      });
+}
 $(function() {
     
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
@@ -15,7 +39,6 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
-            var originM = message;
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -58,8 +81,9 @@ function sendEmail(){
     var message = $("textarea#message").val();
     var link = "mailto:googlehelp@gmail.com"
         + "&subject=Further Help Needed"
-        + "&body=Originale Question:%0D%0A" + message 
-        +" %0D%0A Further Question: %0D%0A"
+        + "&body=Name: "+name+"%0D%0AEmail:"+email+"%0D%0APhone #:"+phone
+        +"%0D%0AOriginale Question:%0D%0A" + message 
+        +" %0D%0A%0D%0AFurther Question: %0D%0A"
         ;
 
     window.location.href = link;
@@ -68,9 +92,7 @@ function sendEmail(){
 }
 
 function sendToQna(filteredQuestion, firstName, email, phone) {
-    var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
-    var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554"
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU3NDIxNywiaWF0IjoxNTcxNTcwNjE3fQ.F-pTz3yKlG3ONSFn6RPnaNtkhAL4n7PnSIRMk6mOhwQ"
+    //var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU3NDIxNywiaWF0IjoxNTcxNTcwNjE3fQ.F-pTz3yKlG3ONSFn6RPnaNtkhAL4n7PnSIRMk6mOhwQ"
     $.ajax({
         data:JSON.stringify( {
             "query": filteredQuestion,
