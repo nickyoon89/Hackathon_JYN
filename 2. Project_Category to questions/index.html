@@ -137,7 +137,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                <button type="submit" class="btn btn-success btn-lg">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -161,8 +161,7 @@
                 <!-- Collapse_List_1 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="https://support.google.com/googleplay/answer/4355207?hl=en&ref_topic=3364260">Collapsible Group 1</a>
+                        <h4 class="panel-title" id="link1">
                         </h4>
                     </div>
                 </div>
@@ -170,16 +169,14 @@
                 <!-- Collapse_List_2 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="https://support.google.com/googleplay/answer/4355207?hl=en&ref_topic=3364260">Collapsible Group 2</a>
+                        <h4 class="panel-title" id="link2">
                         </h4>
                     </div>
                 </div>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="https://support.google.com/googleplay/answer/4355207?hl=en&ref_topic=3364260">Collapsible Group 3</a>
+                        <h4 class="panel-title" id="link3">
                         </h4>
                     </div>
                 </div>
@@ -204,7 +201,7 @@
                 <div class="col-lg-12 mr-auto text-center">
 
                     <!-- Make sure to change the email address in anchor text AND the link below! -->
-                    <button class="btn btn-primary" href="#" data-dismiss="modal">
+                    <button class="btn btn-primary" onclick="sendEmail()" data-dismiss="modal">
                         Send email
                     </button>
                 </div>
