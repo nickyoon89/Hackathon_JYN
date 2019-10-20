@@ -109,14 +109,17 @@ function sendToQna(filteredQuestion, firstName, email, phone) {
                 $('#link3').html('<a href="'+siteUrl[categoryArr[2]]+'" target = "_blank">'+categoryArr[2]+'</a>');  
             })
             
-            $.getJSON("../json/graphData.json").done(function(graphData){
-                console.log(graphData);
-                graphData[data.results[0].faq.answer]=parseInt(graphData[data.results[0].faq.answer])+1;
+            $.getJSON("../json/graphData.json").done(function(graphD){
+                let graphData=graphD;
+                if(JSON.parse(localStorage.getItem('myGraphData'))){
+                    graphData=JSON.parse(localStorage.getItem('myGraphData'));
+                }                
+                let category = data.results[0].categories[0].name;
+                graphData[category]=parseInt(graphData[category])+1;
                 if(filteredQuestion.includes("**")){
-                    console.log(graphData[data.results[0].faq.answer+"_off"]);
-                    graphData[data.results[0].faq.answer+"_off"]=parseInt(graphData[data.results[0].faq.answer+"_off"])+1;
-                    console.log(graphData[data.results[0].faq.answer+"_off"]);
+                    graphData[category+"_off"]=parseInt(graphData[category+"_off"])+1;
                 }
+                localStorage.setItem('myGraphData', JSON.stringify(graphData));
                 console.log(graphData);
             })
 
