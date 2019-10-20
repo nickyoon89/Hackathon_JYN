@@ -27,8 +27,9 @@ $(function() {
                 badwords.sort(function(a, b){
                     return b.length - a.length;
                 }).forEach(badword => {
-                    var regex=new RegExp(" "+badword+" ","gi");
-                    message=message.replace(regex, " ** ");
+                    var regex=new RegExp(badword,"gi");
+                    message=message.replace(regex, "**");
+                    console.log(message);
                 });
                 console.log(message);
               
