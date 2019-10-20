@@ -82,8 +82,8 @@ function sendEmail(){
     var link = "mailto:googlehelp@gmail.com"
         + "&subject=Further Help Needed"
         + "&body=Name: "+name+"%0D%0AEmail:"+email+"%0D%0APhone #:"+phone
-        +"%0D%0AOriginale Question:%0D%0A" + message 
-        +" %0D%0A%0D%0AFurther Question: %0D%0A"
+        + "Originale Question:%0D%0A" + message 
+        + "%0D%0A%0D%0AFurther Question: %0D%0A"
         ;
 
     window.location.href = link;

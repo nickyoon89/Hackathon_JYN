@@ -1,0 +1,2704 @@
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I find most recent articles on Google?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is most searched on Google?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I search for most searched words on Google?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I find news articles?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are the top 10 Google searches?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I contact Google pixel support?",
+    "answer": "Contact Google Play support"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I contact Google by phone?",
+    "answer": "Contact Google Play support"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I contact Google directly?",
+    "answer": "Contact Google Play support"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google's telephone number?",
+    "answer": "Contact Google Play support"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I contact Google business by phone?",
+    "answer": "Contact Google Play support"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I block Google Play store?",
+    "answer": "Parent Guide to Google Play"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the best free parental control app for Android?",
+    "answer": "Parent Guide to Google Play"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I block my child from downloading apps?",
+    "answer": "Parent Guide to Google Play"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I set a password for downloading apps?",
+    "answer": "Parent Guide to Google Play"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you change Google Play password?",
+    "answer": "Parent Guide to Google Play"
+  },
+  "categories": [
+    {
+      "id": "7db64b4f-c750-4940-b5ac-9150daefc9a0"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you install Google Play apps on your computer?",
+    "answer": "Get Android apps and digital content from the Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I install Google Play on my Chinese Android phone?",
+    "answer": "Get Android apps and digital content from the Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I use Google Play Instant App?",
+    "answer": "Get Android apps and digital content from the Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I reinstall my Google Play store?",
+    "answer": "Get Android apps and digital content from the Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I recover my Google Play account?",
+    "answer": "Get Android apps and digital content from the Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What happens if you pre register a game?",
+    "answer": "Pre-order or pre-register for apps, movies, music, books, and audiobooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is pre register in Play Store?",
+    "answer": "Pre-order or pre-register for apps, movies, music, books, and audiobooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you cancel a preorder on game?",
+    "answer": "Pre-order or pre-register for apps, movies, music, books, and audiobooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you get your money back from pre ordering a game?",
+    "answer": "Pre-order or pre-register for apps, movies, music, books, and audiobooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is a pre order bonus code?",
+    "answer": "Pre-order or pre-register for apps, movies, music, books, and audiobooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why I can't update my apps on Google Play store?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you update Google Play apps?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why do Android apps update so often?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I get rid of play protect?",
+    "answer": "Help protect against harmful apps with Google Play Protect"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I enable app protection on play protect?",
+    "answer": "Help protect against harmful apps with Google Play Protect"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Play protect any good?",
+    "answer": "Help protect against harmful apps with Google Play Protect"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Play protect an antivirus?",
+    "answer": "Help protect against harmful apps with Google Play Protect"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I permanently disable Google Play protect?",
+    "answer": "Help protect against harmful apps with Google Play Protect"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is family friendly content?",
+    "answer": "Find family-friendly content in Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Parental Control in Play Store?",
+    "answer": "Find family-friendly content in Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add a family payment on Google Play?",
+    "answer": "Find family-friendly content in Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I find family-friendly content in Google Play?",
+    "answer": "Find family-friendly content in Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn off parental controls on Play Store?",
+    "answer": "Set up parental controls on Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google have parental controls?",
+    "answer": "Set up parental controls on Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn off parental controls on Google Play?",
+    "answer": "Set up parental controls on Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn off parental controls on Android?",
+    "answer": "Set up parental controls on Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I set parental controls on Android Internet?",
+    "answer": "Set up parental controls on Google Play"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you use Google Play on computer?",
+    "answer": "Use Google Play on your device or computer"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Google Play on my computer?",
+    "answer": "Use Google Play on your device or computer"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I access Google Play Store app on my computer?",
+    "answer": "Use Google Play on your device or computer"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I get Google Play on Windows 10?",
+    "answer": "Use Google Play on your device or computer"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I install Google Play on my laptop?",
+    "answer": "Use Google Play on your device or computer"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What devices is Google Play compatible with?",
+    "answer": "Connectivity and system requirements"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are the minimum requirements for using Google chromecast?",
+    "answer": "Connectivity and system requirements"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are the system requirements for Youtube?",
+    "answer": "Connectivity and system requirements"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add a device to Google Play on my computer?",
+    "answer": "Connectivity and system requirements"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Play only for android?",
+    "answer": "Connectivity and system requirements"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I get Google Play on my Chromebook?",
+    "answer": "Google Play on Chromebooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What Chromebooks are compatible with Google Play?",
+    "answer": "Google Play on Chromebooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I run Android apps on my Chromebook?",
+    "answer": "Google Play on Chromebooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google duo work on Chromebook?",
+    "answer": "Google Play on Chromebooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Android apps on my Chromebook?",
+    "answer": "Google Play on Chromebooks"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the use of Google Instant Apps?",
+    "answer": "Use Play Instant Apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is instant apps and why does it keep updating?",
+    "answer": "Use Play Instant Apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I use instant apps on Google Play?",
+    "answer": "Use Play Instant Apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I uninstall Instant Apps?",
+    "answer": "Use Play Instant Apps"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn off Instant Apps?",
+    "answer": "Change how you open instant apps from links"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn off Google Play services for instant apps?",
+    "answer": "Change how you open instant apps from links"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I stop my instant app from auto updating?",
+    "answer": "Change how you open instant apps from links"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is it safe to uninstall Google Play services for instant apps?",
+    "answer": "Change how you open instant apps from links"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What does it mean when Google Play services for instant Apps has stopped?",
+    "answer": "Change how you open instant apps from links"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google have a budget app?",
+    "answer": "Set a budget for your Google Play expenses"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the easiest budget app?",
+    "answer": "Set a budget for your Google Play expenses"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are good apps for budgeting?",
+    "answer": "Set a budget for your Google Play expenses"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the best free money management app?",
+    "answer": "Set a budget for your Google Play expenses"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the best free budgeting app?",
+    "answer": "Set a budget for your Google Play expenses"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google Play Pass?",
+    "answer": "Get started with Google Play Pass"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How to sign up for Google Play Pass?",
+    "answer": "Get started with Google Play Pass"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I subscribe to Google Play Pass? ",
+    "answer": "Get started with Google Play Pass"
+  },
+  "categories": [
+    {
+      "id": "3d326f21-c288-4f3b-8846-8f656c418a35"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I download Google Play store?",
+    "answer": "Downloading on Google Play"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Google Play services?",
+    "answer": "Downloading on Google Play"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Google Play on my Android phone?",
+    "answer": "Downloading on Google Play"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Google Play store back?",
+    "answer": "Downloading on Google Play"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I pay with PayPal on Google?",
+    "answer": "Payment methods"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I pay my credit card bill with Google?",
+    "answer": "Payment methods"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I change my payment method on Google?",
+    "answer": "Payment methods"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the difference between Google pay and PayPal?",
+    "answer": "Payment methods"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I pay my electric bill with Google?",
+    "answer": "Payment methods"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I find my Google purchases?",
+    "answer": "Find & buy digital content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I download a book I bought on Google Play?",
+    "answer": "Find & buy digital content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I find my purchase history?",
+    "answer": "Find & buy digital content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google charge tax?",
+    "answer": "Charges & taxes"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How much are Google fi taxes and fees?",
+    "answer": "Charges & taxes"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is there tax on app purchases?",
+    "answer": "Charges & taxes"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google store charge tax Canada?",
+    "answer": "Charges & taxes"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you avoid sales tax?",
+    "answer": "Charges & taxes"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you get free Google Play codes?",
+    "answer": "Google Play gift cards, promotional codes, & balance"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I get Google Play recharge code?",
+    "answer": "Google Play gift cards, promotional codes, & balance"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I get Google Play Store redeem code for free in Canada?",
+    "answer": "Google Play gift cards, promotional codes, & balance"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I get free Google Play gift cards?",
+    "answer": "Google Play gift cards, promotional codes, & balance"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I transfer Google Play balance to bank account?",
+    "answer": "Google Play gift cards, promotional codes, & balance"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I make in app purchases on Google Play?",
+    "answer": "Make in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I change Google Play account in app purchases?",
+    "answer": "Make in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I use Google Play credit for in app purchases?",
+    "answer": "Make in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you cancel in app purchases on Google Play?",
+    "answer": "Make in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Will Google Play refund in app purchases?",
+    "answer": "Make in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What do Google points get you?",
+    "answer": "Get started with Google Play Points"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you earn Google points?",
+    "answer": "Get started with Google Play Points"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google pay have rewards program?",
+    "answer": "Get started with Google Play Points"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Do you get paid for Google reviews?",
+    "answer": "Get started with Google Play Points"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Do Google reviewers get paid?",
+    "answer": "Get started with Google Play Points"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I subscribe to a Google site?",
+    "answer": "Buy or subscribe to content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I cancel a Google subscription?",
+    "answer": "Buy or subscribe to content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How much is a Google Play subscription?",
+    "answer": "Buy or subscribe to content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I subscribe to Google Play on iPhone?",
+    "answer": "Buy or subscribe to content"
+  },
+  "categories": [
+    {
+      "id": "12bba191-dfc6-4998-a3ad-4663874ec14f"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I use same Google account on two phones?",
+    "answer": "Add & use accounts on your device"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I update my Android apps from Google Play?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I update my Google Play store?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why I cant update my apps on Google Play store?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is it necessary to update apps on Android?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I upgrade my version of Android?",
+    "answer": "Update your Android apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I uninstall Google apps on Android?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I delete factory installed apps Android?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I disable Google Apps?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How to delete pre-Installed Android Apps?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I restore my apps?",
+    "answer": "Reinstall and re-enable apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I reinstall Google Apps?",
+    "answer": "Reinstall and re-enable apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I reinstall preinstalled apps on Android?",
+    "answer": "Reinstall and re-enable apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I restore my apps after factory reset android?",
+    "answer": "Reinstall and re-enable apps"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I rename a device on Google?",
+    "answer": "Hide devices & add device nicknames"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I manage my devices on Google Play?",
+    "answer": "Hide devices & add device nicknames"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I hide my Google account on Android?",
+    "answer": "Hide devices & add device nicknames"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I block a device from my Google account?",
+    "answer": "Hide devices & add device nicknames"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are the requirements for Google Assistant?",
+    "answer": "System requirements"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I use Google assistant on my PC?",
+    "answer": "System requirements"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I turn on my Google assistant?",
+    "answer": "System requirements"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I activate Google assistant?",
+    "answer": "System requirements"
+  },
+  "categories": [
+    {
+      "id": "fcc71471-7684-41fc-820a-d7dbebecac14"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add more accounts on Google pay?",
+    "answer": "Add & use accounts on your device"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I get Google Play to recognize my device?",
+    "answer": "Add & use accounts on your device"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you add two Google pay accounts?",
+    "answer": "Add & use accounts on your device"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add another phone to my Google account?",
+    "answer": "Add & use accounts on your device"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I require a password for Google Play purchases?",
+    "answer": "Require a password or authentication for purchases"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I stop Google purchases?",
+    "answer": "Require a password or authentication for purchases"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I authenticate my play store?",
+    "answer": "Require a password or authentication for purchases"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google authentication?",
+    "answer": "Require a password or authentication for purchases"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why can't I sign into my Google account on my Android phone?",
+    "answer": "Can't sign in to your Google Account"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I sign into my Google account for playstore?",
+    "answer": "Can't sign in to your Google Account"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I recover my Google account?",
+    "answer": "Can't sign in to your Google Account"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I reset my Google Play Store account?",
+    "answer": "Can't sign in to your Google Account"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you reset your Google account?",
+    "answer": "Can't sign in to your Google Account"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I change Google Play to us?",
+    "answer": "Change your Google Play country"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I change my play store region?",
+    "answer": "Change your Google Play country"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How can I change my country in Google Play without credit card?",
+    "answer": "Change your Google Play country"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I change my Google Chrome region?",
+    "answer": "Change your Google Play country"
+  },
+  "categories": [
+    {
+      "id": "74be51fe-34c8-47cf-9b78-7a43a83d3719"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How to get a refund on Google Play Store purchases?",
+    "answer": "Get a refund on Google Play"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How to get a refund from the Google Play Store?",
+    "answer": "Get a refund on Google Play"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I dispute a charge on Google?",
+    "answer": "Get a refund on Google Play"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How to Dispute Unauthorized Charges on Your Account?",
+    "answer": "Report unauthorized charges"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What can I do about unauthorized charges on my debit card?",
+    "answer": "Report unauthorized charges"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I report unauthorized Google charges?",
+    "answer": "Report unauthorized charges"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why are my in app purchases not allowed?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I fix in app purchase error on android?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why is Google Play declining my payment?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why can't I buy in app purchases Android?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I enable in app purchases in settings?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "6f0e5aaa-59ce-40a7-862d-bdd92bc8f11c"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google's phone number?",
+    "answer": "Downloading & purchasing"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Do you need an account to use Google Play?",
+    "answer": "Downloading & purchasing"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I reach Google customer service?",
+    "answer": "Downloading & purchasing"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I email Google customer service?",
+    "answer": "Downloading & purchasing"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google customer service number?",
+    "answer": "Downloading & purchasing"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why did my card get declined when I have money?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I enable in app purchases Android?",
+    "answer": "Problems with in-app purchases"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I stop apps from deleting on Android?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I uninstall Google Apps from Android phone?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I uninstall built in apps on Android?",
+    "answer": "Delete or disable apps on Android"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I get in touch with Google Play?",
+    "answer": "Find the right place to get help"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I complain to playstore?",
+    "answer": "Find the right place to get help"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Why is Google location wrong?",
+    "answer": "Find the right place to get help"
+  },
+  "categories": [
+    {
+      "id": "fe65d473-8206-44ca-9078-1750db49bb8e"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I download the Google Play store?",
+    "answer": "Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Play Store app free?",
+    "answer": "Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the Google Play Store app?",
+    "answer": "Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I install Google Play on my smart TV?",
+    "answer": "Google Play Store"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I access my Google Play Books?",
+    "answer": "Google Play Books"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I read my Google Play Books on my computer?",
+    "answer": "Google Play Books"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I convert Google Books to PDF?",
+    "answer": "Google Play Books"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I download from Google Books?",
+    "answer": "Google Play Books"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can you put Google Play Books on Kindle?",
+    "answer": "Google Play Books"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do you play games on Google?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What games can you play on Google Play?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google Play games used for?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google play games free?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What happens if I delete Google Play Games?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is it safe to uninstall Google Play Games?",
+    "answer": "Google Play Games"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Can I play Google play movies on my TV?",
+    "answer": "Google Play Movies & TV"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Play Movies and TV free?",
+    "answer": "Google Play Movies & TV"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How does Google Play Movies and TV work?",
+    "answer": "Google Play Movies & TV"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How much is Google Play Movies?",
+    "answer": "Google Play Movies & TV"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I watch a movie I bought on Google Play?",
+    "answer": "Google Play Movies & TV"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the difference between Google Music and YouTube music?",
+    "answer": "Google Play Music"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I use Google Music?",
+    "answer": "Google Play Music"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How much is the Google Play music subscription?",
+    "answer": "Google Play Music"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add music from Google Play to Chrome?",
+    "answer": "Google Play Music"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Is Google Music free with Google home?",
+    "answer": "Google Play Music"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is the Google Play Newsstand app?",
+    "answer": "Google Play Newsstand"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Where are my magazines on Google Play?",
+    "answer": "Google Play Newsstand"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I stop Google Play Newsstand?",
+    "answer": "Google Play Newsstand"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I enable Google news feed?",
+    "answer": "Google Play Newsstand"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add magazines to my newsstand?",
+    "answer": "Google Play Newsstand"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What is Google family?",
+    "answer": "Information for families"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I add family to Google?",
+    "answer": "Information for families"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "What can Google family members see?",
+    "answer": "Information for families"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "How do I remove myself from Google family?",
+    "answer": "Information for families"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+{
+  "type": "faq",
+  "faq": {
+    "question": "Does Google family cost money?",
+    "answer": "Information for families"
+  },
+  "categories": [
+    {
+      "id": "3e9edfcf-c58c-4c08-b0e0-67611eb692be"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
