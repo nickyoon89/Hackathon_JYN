@@ -1,0 +1,40 @@
+FORM
+{
+  "type": "faq",
+  "faq": {
+    "question": "What are the top 10 Google searches?",
+    "answer": "Popular articles"
+  },
+  "categories": [
+    {
+      "id": "1d65024c-db66-459f-8031-57744acf4963"
+    }
+  ],
+  "externalUrl": "http://test.co/info/{{$guid}}"
+},
+
+
+///////////CATEGORY ID
+"id": "07b23d6d-9225-4bda-9b44-cc34cd83a4fb",
+"name": "Using Google Play",
+
+"id": "e747e135-2e31-4500-ab9b-375e1f1a20b0",
+"name": "Troubleshoot issues",
+
+"id": "31b6f141-f91a-49bd-8416-bae1d43bc75e",
+"name": "Refunds & returns",
+
+"id": "854ea4a2-c597-4bf5-bae4-877abb096f13",
+"name": "Purchasing & downloading",
+
+"id": "b6d967fa-6967-4692-83b7-3586ae16f834",
+"name": "Managing devices",
+
+"id": "bf2b8227-1d0c-40bf-93fb-44ed7b7bde2b",
+"name": "Help by product type",
+
+"id": "1d65024c-db66-459f-8031-57744acf4963",
+"name": "Get Started with Google Play",
+
+"id": "77f8a190-3333-42cf-88ef-728103e2290c",
+"name": "Account & password",
