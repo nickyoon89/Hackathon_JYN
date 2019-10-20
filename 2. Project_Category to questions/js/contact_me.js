@@ -58,7 +58,7 @@ $('#name').focus(function() {
 function sendToQna(filteredQuestion, firstName, email, phone) {
     var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
     var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554"
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU0ODk5NCwiaWF0IjoxNTcxNTQ1Mzk0fQ.gyyAwa1ZINd9GPg4pyL_cWVufEmv0W3N_fvu1PiL_Xc"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU1MzA3MiwiaWF0IjoxNTcxNTQ5NDcyfQ.gNyXu7mDyRiXE7CNOeLY1LbZ64cBzSvdiFxYv3vElmc"
     $.ajax({
         data:JSON.stringify( {
             "query": filteredQuestion,
