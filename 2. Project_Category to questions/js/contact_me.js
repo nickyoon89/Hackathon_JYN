@@ -27,15 +27,15 @@ $(function() {
                 badwords.sort(function(a, b){
                     return b.length - a.length;
                 }).forEach(badword => {
-                    var regex=new RegExp(badword,"gi");
-                    message=message.replace(regex, "**");
+                    var regex=new RegExp(" "+badword+" ","gi");
+                    message=message.replace(regex, " ** ");
                 });
                 console.log(badwords.sort(function(a, b){
                     return b.length - a.length;
                 }));
               
             }).success(function(){
-                sendToQna(message, firstName);
+                sendToQna(message, firstName, email, phone);
             })
                         
         },
@@ -56,9 +56,10 @@ $('#name').focus(function() {
 });
 
 
-function sendToQna(filteredQuestion, firstName) {
+function sendToQna(filteredQuestion, firstName, email, phone) {
     var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
-    var kbid = "6c96fe14-c061-4eb2-bbeb-3161c9dcc6a9"
+    var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU0ODk5NCwiaWF0IjoxNTcxNTQ1Mzk0fQ.gyyAwa1ZINd9GPg4pyL_cWVufEmv0W3N_fvu1PiL_Xc"
     $.ajax({
         data:JSON.stringify( {
             "query": filteredQuestion,
@@ -78,7 +79,7 @@ function sendToQna(filteredQuestion, firstName) {
         "headers": {
             "Content-Type": "application/json",
             "organizationid": "a37586f7-04db-4494-b765-2d7f4c41dbce",
-            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU0MTY0NywiaWF0IjoxNTcxNTM4MDQ3fQ.wUswDijKV0r_Cj-AEqTjTa6V5U4G4b8gCC9Es096RH8",
+            "token": token,
             "Accept": "*/*",
         },
         "processData": false,
@@ -88,6 +89,13 @@ function sendToQna(filteredQuestion, firstName) {
             $('#success').html("<div class='alert alert-success'>");
             $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                 .append("</button>");
+            var link = "mailto:nickyoon89@gmail.com"
+                //+ "?cc=myCCaddress@example.com"
+                + "&subject=" + data.results[0].faq.answer
+                + "&body=" + filteredQuestion
+                ;
+       
+            window.location.href = link;
             $('#success > .alert-success')
                 .append("<strong>Your message has been sent. </strong>");
             $('#success > .alert-success')
@@ -101,7 +109,6 @@ function sendToQna(filteredQuestion, firstName) {
             // Fail message
             $('#success').html("<div class='alert alert-danger'>");
             $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                .append("</button>");
             $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
             $('#success > .alert-danger').append('</div>');
             //clear all fields
