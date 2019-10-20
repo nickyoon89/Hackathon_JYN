@@ -29,12 +29,32 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
-var myLineChart = new Chart(ctx, {
+var labels = ["Get started with Google Play", "Using Google Play", "Purchasing & downloading", "Managing devices", "Account & password", "Refunds & returns", "Troubleshoot issues", "Help by product type"]; 
+var dataG = [];
+var off_data=[];
+var tbodyData="";
+var sumD=0;
+var sumO=0;
+$.getJSON("../../json/graphData.json").done(function(graphData){
+    labels.forEach(category => {
+      dataG.push(graphData[category]);
+      off_data.push(graphData[category+"_off"]);
+      sumD=sumD+parseInt(graphData[category]);
+      sumO=sumO+parseInt(graphData[category+"_off"]);
+      tbodyData=tbodyData+"<tr><td>"+category+"</td><td>"+graphData[category]+"</td><td>"+graphData[category+"_off"]+"</td><td>"+((graphData[category+"_off"]/graphData[category])*100).toFixed(2)+"%</td></tr>"
+    });           
+    dataG=dataG.map(Number);
+    console.log(off_data);
+}).done(function(){
+
+  $("tbody").append(tbodyData);
+  $("tfoot").append("<tr><th>SUM</th><th>"+sumD+"</th><th>"+sumO+"</th><th>"+((sumO/sumD)*100).toFixed(2)+"%</th></tr>");
+  var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: labels,
     datasets: [{
-      label: "Earnings",
+      label: "Total Request",
       lineTension: 0.3,
       backgroundColor: "rgba(78, 115, 223, 0.05)",
       borderColor: "rgba(78, 115, 223, 1)",
@@ -46,7 +66,22 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+      data: dataG,
+    },
+    {
+      label: "Aggressive Request",
+      lineTension: 0.3,
+      backgroundColor: "rgba(223, 115, 78, 0.05)",
+      borderColor: "rgba(223, 115, 78, 1)",
+      pointRadius: 3,
+      pointBackgroundColor: "rgba(223, 115, 78,  1)",
+      pointBorderColor: "rgba(223, 115, 78, 1)",
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: "rgba(223, 115, 78, 1)",
+      pointHoverBorderColor: "rgba(223, 115, 78, 1)",
+      pointHitRadius: 10,
+      pointBorderWidth: 2,
+      data: off_data,
     }],
   },
   options: {
@@ -61,6 +96,7 @@ var myLineChart = new Chart(ctx, {
     },
     scales: {
       xAxes: [{
+        display: false,
         time: {
           unit: 'date'
         },
@@ -76,9 +112,8 @@ var myLineChart = new Chart(ctx, {
         ticks: {
           maxTicksLimit: 5,
           padding: 10,
-          // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return number_format(value);
           }
         },
         gridLines: {
@@ -110,9 +145,12 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
         }
       }
     }
   }
 });
+})
+
+
