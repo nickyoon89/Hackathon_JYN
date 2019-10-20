@@ -29,10 +29,7 @@ $(function() {
                 }).forEach(badword => {
                     var regex=new RegExp(badword,"gi");
                     message=message.replace(regex, "**");
-                    console.log(message);
-                });
-                console.log(message);
-              
+                });              
             }).success(function(){
                 sendToQna(message, firstName, email, phone);
             })
@@ -54,11 +51,26 @@ $('#name').focus(function() {
     $('#success').html('');
 });
 
+function sendEmail(){
+    var name = $("input#name").val();
+    var email = $("input#email").val();
+    var phone = $("input#phone").val();
+    var message = $("textarea#message").val();
+    var link = "mailto:googlehelp@gmail.com"
+        + "&subject=Further Help Needed"
+        + "&body=Originale Question:%0D%0A" + message 
+        +" %0D%0A Further Question: %0D%0A"
+        ;
+
+    window.location.href = link;
+    //clear all fields
+    $('#contactForm').trigger("reset");
+}
 
 function sendToQna(filteredQuestion, firstName, email, phone) {
     var endpoint = "https://api.genesysappliedresearch.com/v2/knowledge"
     var kbid = "af2df5e7-782d-4d79-bda7-b5ec047f4554"
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU1MzA3MiwiaWF0IjoxNTcxNTQ5NDcyfQ.gNyXu7mDyRiXE7CNOeLY1LbZ64cBzSvdiFxYv3vElmc"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6ImEzNzU4NmY3LTA0ZGItNDQ5NC1iNzY1LTJkN2Y0YzQxZGJjZSIsImV4cCI6MTU3MTU2MjgzNSwiaWF0IjoxNTcxNTU5MjM1fQ.z6l-5_Wv7oAGozF5ev26jsXlV1yArx7oqh-a3jRF8ck"
     $.ajax({
         data:JSON.stringify( {
             "query": filteredQuestion,
@@ -73,7 +85,6 @@ function sendToQna(filteredQuestion, firstName, email, phone) {
         "async": true,
         "crossDomain": true,
         "url": endpoint + "/knowledgebases/" + kbid + "/search",
-        //"url": "https://api.genesysappliedresearch.com/v2/knowledge/knowledgebases/78fd356d-d4a0-4fcb-a8cf-b630e1e0c5a3/search",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",
@@ -84,31 +95,36 @@ function sendToQna(filteredQuestion, firstName, email, phone) {
         "processData": false,
         success: function(data) {
             // Enable button & show success message
+            $.getJSON("../json/siteUrl.json").done(function(siteUrl){
+                var categoryStr="";
+                data.results.forEach(response => {
+                    let category = response.faq.answer;
+                    if(categoryStr.includes(category)==false){
+                        categoryStr=categoryStr+category+",";
+                    }
+                });
+                var categoryArr = categoryStr.split(",");
+                $('#link1').html('<a href="'+siteUrl[categoryArr[0]]+'" target = "_blank">'+categoryArr[0]+'</a>');
+                $('#link2').html('<a href="'+siteUrl[categoryArr[1]]+'" target = "_blank">'+categoryArr[1]+'</a>'); 
+                $('#link3').html('<a href="'+siteUrl[categoryArr[2]]+'" target = "_blank">'+categoryArr[2]+'</a>');  
+            })
+            
             $("#btnSubmit").attr("disabled", false);
             $('#success').html("<div class='alert alert-success'>");
             $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                 .append("</button>");
-            var link = "mailto:nickyoon89@gmail.com"
-                //+ "?cc=myCCaddress@example.com"
-                + "&subject=" + data.results[0].faq.answer
-                + "&body=" + filteredQuestion
-                ;
-       
-            window.location.href = link;
             $('#success > .alert-success')
-                .append("<strong>Your message has been sent. </strong>");
+                .append("<strong>Your message has been submitted. </strong>");
             $('#success > .alert-success')
                 .append('</div>');
 
-            //clear all fields
-            $('#contactForm').trigger("reset");
             console.info(data);
         }, 
         error: function() {
             // Fail message
             $('#success').html("<div class='alert alert-danger'>");
             $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+            $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my server is not responding. Please try again later!");
             $('#success > .alert-danger').append('</div>');
             //clear all fields
             $('#contactForm').trigger("reset");
